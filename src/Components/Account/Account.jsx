@@ -81,7 +81,7 @@ const Account = () => {
   };
 
   return (
-    <div className="account-page">
+    <div className="account-page account">
       {showUserTypePopup ? (
         <div className="user-type-popup">
           <h3>Choose Your Account Type</h3>
