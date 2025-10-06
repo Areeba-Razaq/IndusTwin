@@ -4,6 +4,7 @@
   justify-content: space-between;
   padding: 60px 130px;
   background-color: #f0f9fd;
+  gap: 120px;
 }
 
 .hero-content {
@@ -62,13 +63,17 @@
 .hero-image {
   flex: 1;
   text-align: right;
+  margin-right: -50px;
+  justify-content: flex-end; /* ✅ Ensures image aligns to the far right */
+  align-items: center;  
 }
 
 .hero-image img {
-  /* max-width: 95%; */
+  width: 430px;    /* ✅ Slightly larger for balance */
+  height: auto;    /* ✅ Maintain aspect ratio */
   border-radius: 8px;
-  width: 400px;
-  height: 350px;
+  object-fit: cover;
+  margin-right: 10px; /* ✅ Small right margin for breathing space */
 }
 
 /* ---------------------------
