@@ -1,0 +1,27 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: "Inter", "Open Sans", sans-serif;
+}
+
+/* Make sure all sections fit inside viewport */
+section, header, footer, nav, div {
+  max-width: 100%;
+}
+
+/* Images should never overflow their containers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

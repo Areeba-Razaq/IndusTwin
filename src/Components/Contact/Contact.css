@@ -1,0 +1,284 @@
+/* =========================
+   Contact.css — Updated
+   Keeps desktop styles untouched;
+   improves icon/text alignment and mobile layout.
+   ========================= */
+
+/* Main Container */
+.contact-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Title */
+.contact-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Subtitle */
+.contact-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Two Cards */
+.contact-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: stretch; /* ensure both cards match height */
+}
+
+/* Each Card */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  padding: 20px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* Different widths */
+.form-card {
+  flex: 0 0 65%;
+}
+
+.info-card {
+  flex: 0 0 35%;
+}
+
+/* Card title */
+.card-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* ========== Form Styling (desktop unchanged) ========== */
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-form button {
+  width: 40%;
+  background: #00a7d1;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #008bb0;
+}
+
+/* ========== Contact Info ========== */
+/* Improved alignment: fixed-width icon box + flexible text column */
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;      /* vertically center icon + text */
+  gap: 12px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Icon container: fixed square, centered icon */
+.contact-info .icon {
+  font-size: 18px;
+  color: #00a7d1;
+  flex: 0 0 40px;           /* fixed width so text aligns */
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf8fb;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* The text column (strong + details) */
+.contact-info li > div {
+  flex: 1 1 auto;
+  text-align: left;
+  line-height: 1.25;
+}
+
+/* Strong label style */
+.contact-info li > div strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #0b5970;
+}
+
+/* ========== Social Links ========== */
+.social-links {
+  display: flex;
+  flex-direction: column;   /* stacked by default (desktop) */
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* Link style — subtle pill-like buttons */
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #0077b5;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background 0.15s, transform 0.06s;
+}
+
+.social-links a:hover {
+  background: #f0fbff;
+  transform: translateY(-1px);
+}
+
+.social-links .icon {
+  font-size: 16px;
+}
+
+/* ========================= */
+/* 📱 Mobile Responsiveness  */
+/* ========================= */
+@media (max-width: 768px) {
+  /* keep headings readable */
+  .contact-title {
+    font-size: 26px;
+  }
+
+  .contact-subtitle {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  /* stack cards */
+  .contact-cards {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* force each card full width and same box-sizing */
+  .form-card,
+  .info-card {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  /* make form inputs full width and easier to tap */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .contact-form textarea {
+    min-height: 120px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  /* Card title centered on mobile for a clean card header */
+  .card-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  /* Center the info block inside the card but keep each item left aligned */
+  .info-card .contact-info {
+    max-width: 480px;
+    margin: 0 auto 14px;
+  }
+
+  /* Keep icon left of text and vertically centered */
+  .contact-info li {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  /* Make icons slightly larger and keep fixed width */
+  .contact-info .icon {
+    flex: 0 0 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  /* Social links: show inline (centered) and wrap if needed */
+  .social-links {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .social-links a {
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: #f5fbfc;
+    border: 1px solid #e6f4f6;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .contact-subtitle {
+    font-size: 13px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .contact-info li {
+    font-size: 13px;
+  }
+
+  .social-links a {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+}

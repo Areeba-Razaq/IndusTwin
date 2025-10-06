@@ -1,0 +1,303 @@
+/* Page container */
+.flood-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px 60px;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #111;
+  margin-top: 50px;
+}
+
+/* Left Column */
+.flood-left {
+  flex: 2;
+}
+
+.flood-left h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.flood-left > p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* Alert cards grid */
+.alert-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* Alert card styles */
+.alert-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.alert-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.alert-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* Colored indicators */
+.alert-card.red h3 {
+  color: #d9534f; /* Bootstrap Danger Red */
+}
+
+.alert-card.yellow h3 {
+  color: #f0ad4e; /* Bootstrap Warning Orange */
+}
+
+.alert-card.green h3 {
+  color: #5cb85c; /* Bootstrap Success Green */
+}
+
+.card-footer {
+  font-size: 12px;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-footer a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #007bff;
+}
+
+/* Recent Alerts */
+.recent-alerts h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.recent-alerts p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.accordion {
+  border-top: 1px solid #ddd;
+}
+
+.accordion-item {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.accordion-item span{
+  color: #0056b3;
+}
+/* Right Column */
+.flood-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 90px;
+}
+
+/* Subscribe Box */
+.subscribe-box {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.subscribe-box h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.subscribe-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.subscribe-box label {
+  font-size: 14px;
+  margin: 8px 0 4px;
+  display: block;
+}
+
+.subscribe-box input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.checkbox-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.subscribe-box button {
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.subscribe-box button:hover {
+  background: #0056b3;
+}
+
+/* Safety Info */
+.safety-box {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.safety-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.safety-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.safety-box ul {
+  list-style: disc;
+  margin-left: 20px;
+  color: #444;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ---------------------- */
+/* 🌐 Responsive Design  */
+/* ---------------------- */
+
+/* Tablets & smaller screens */
+@media (max-width: 1024px) {
+  .flood-container {
+    flex-direction: column;
+    padding: 30px 40px;
+    gap: 30px;
+  }
+
+  .flood-left,
+  .flood-right {
+    width: 100%;
+    margin: 0;
+  }
+
+  .alert-cards {
+    grid-template-columns: 1fr; /* stack alerts vertically */
+  }
+
+  .flood-right {
+    margin-top: 20px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .flood-container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .flood-left h2 {
+    font-size: 26px;
+  }
+
+  .flood-left > p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .alert-card {
+    padding: 14px;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .recent-alerts h3 {
+    font-size: 16px;
+  }
+
+  .accordion-item {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .subscribe-box,
+  .safety-box {
+    padding: 16px;
+  }
+
+  .subscribe-box h3,
+  .safety-box h3 {
+    font-size: 16px;
+  }
+
+  .subscribe-box input[type="email"] {
+    font-size: 13px;
+    padding: 7px;
+  }
+
+  .subscribe-box button {
+    font-size: 13px;
+    padding: 9px;
+  }
+
+  .checkbox-group label {
+    font-size: 13px;
+  }
+
+  .safety-box ul {
+    font-size: 13px;
+  }
+}
