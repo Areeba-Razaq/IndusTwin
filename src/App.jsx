@@ -7,6 +7,7 @@ import FloodAlerts from './Components/Alerts/FloodAlerts';
 import Datasets from './Components/Datasets/Datasets';
 import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
+import Account from './Components/Account/Account';
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
         <Route path='/datasets' element={<Datasets/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/account' element={<Account/>}/>
       </Routes>
     </Router>
   );
