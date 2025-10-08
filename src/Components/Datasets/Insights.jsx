@@ -136,24 +136,24 @@ export default function Insights() {
       <h3 className="section-title">Historical Data Visualizations</h3>
 
       <div className="chart-box">
-        <h4>Historical Flood Events by Year</h4>
+        <h4>Flood deaths by Year 2022</h4>
         <p>
-          Frequency and category severity of major flood events in the Indus Basin.
+         Displays the total number of deaths reported across various regions
         </p>
         <img
-          src="data-result.png"
-          alt="Historical Flood Events by Year"
+          src="/flood2022/total-deaths-by-region.png"
+          alt="Flood deaths by Year 2022"
           className="chart-img"
         />
       </div>
 
       <div className="chart-box">
-        <h4>Economic Damages from Flood Events</h4>
+        <h4>Infrastructure Damages by Flood 2022</h4>
         <p>
-          Estimated economic impacts (in billions USD) of flood disasters over recent years.
+            Depicts the extent of infrastructure losses across flood-affected regions.
         </p>
         <img
-          src="data-result-2.png"
+          src="/flood2022/infrastructure-damage-by-region.png"
           alt="Economic Damages from Flood Events"
           className="chart-img"
         />

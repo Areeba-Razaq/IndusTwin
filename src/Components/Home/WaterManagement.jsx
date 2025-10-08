@@ -8,7 +8,9 @@ const WaterManagement = () => {
 
       <div className="wm-features">
         <div className="wm-feature">
-          <div className="icon">➕</div>
+          <div className="wm-image">
+            <img src="Real-Time-Monitoring.webp" alt="Real-time Monitoring" />
+          </div>
           <h3>Real-time Monitoring</h3>
           <p>
             Gain continuous insights into water levels, rainfall, and river
@@ -18,7 +20,9 @@ const WaterManagement = () => {
         </div>
 
         <div className="wm-feature">
-          <div className="icon">🔄</div>
+          <div className="wm-image">
+            <img src="predictive-forecasting.png" alt="Predictive Forecasting" />
+          </div>
           <h3>Predictive Forecasting</h3>
           <p>
             Utilize advanced models to predict flood risks, water scarcity, and

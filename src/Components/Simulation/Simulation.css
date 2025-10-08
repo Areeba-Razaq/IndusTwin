@@ -232,3 +232,12 @@
     height: 180px;
   }
 }
+
+
+.simulation-map {
+  flex: 3;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 500px; /* Make sure this is set */
+}

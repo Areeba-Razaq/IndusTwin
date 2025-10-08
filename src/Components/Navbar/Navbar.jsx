@@ -40,7 +40,7 @@ const Navbar = () => {
         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
         <li><NavLink to="/simulator">Simulator & Alerts</NavLink></li>
         <li><NavLink to="/datasets">Data & Insights</NavLink></li>
-        <li><NavLink to="/about">About Us</NavLink></li>
+        {/* <li><NavLink to="/about">About Us</NavLink></li> */}
         <li><NavLink to="/contact">Contact</NavLink></li>
       </ul>
 

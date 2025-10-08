@@ -310,33 +310,107 @@ const FloodDigitalTwin = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Rainfall & Discharge Trends (30 Days)</h3>
-            <ResponsiveContainer width="100%" height={250}>
-              <LineChart data={recentData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-                <YAxis yAxisId="left" />
-                <YAxis yAxisId="right" orientation="right" />
-                <Tooltip />
-                <Legend />
-                <Line yAxisId="left" type="monotone" dataKey="rainfall" stroke="#3b82f6" strokeWidth={2} name="Rainfall (mm/hr)" />
-                <Line yAxisId="right" type="monotone" dataKey="discharge" stroke="#06b6d4" strokeWidth={2} name="Discharge (m³/s)" />
-              </LineChart>
-            </ResponsiveContainer>
+            <div style={{ width: '100%', height: '300px', minHeight: '300px' }}>
+              {recentData && recentData.length > 0 ? (
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={recentData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                    <XAxis 
+                      dataKey="date" 
+                      tick={{ fontSize: 10 }}
+                      interval="preserveStartEnd"
+                      tickFormatter={(value) => {
+                        if (!value) return '';
+                        const date = new Date(value);
+                        return `${date.getMonth() + 1}/${date.getDate()}`;
+                      }}
+                    />
+                    <YAxis yAxisId="left" tick={{ fontSize: 11 }} label={{ value: 'mm/hr', angle: -90, position: 'insideLeft' }} />
+                    <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 11 }} label={{ value: 'm³/s', angle: 90, position: 'insideRight' }} />
+                    <Tooltip 
+                      contentStyle={{ backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '4px' }}
+                      labelFormatter={(value) => `Date: ${value}`}
+                    />
+                    <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
+                    <Line 
+                      yAxisId="left" 
+                      type="monotone" 
+                      dataKey="rainfall" 
+                      stroke="#3b82f6" 
+                      strokeWidth={2} 
+                      name="Rainfall (mm/hr)"
+                      dot={false}
+                      isAnimationActive={true}
+                    />
+                    <Line 
+                      yAxisId="right" 
+                      type="monotone" 
+                      dataKey="discharge" 
+                      stroke="#06b6d4" 
+                      strokeWidth={2} 
+                      name="Discharge (m³/s)"
+                      dot={false}
+                      isAnimationActive={true}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              ) : (
+                <div className="flex items-center justify-center h-full text-gray-500">
+                  Loading chart data...
+                </div>
+              )}
+            </div>
           </div>
           
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Soil Moisture & Temperature</h3>
-            <ResponsiveContainer width="100%" height={250}>
-              <AreaChart data={recentData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Area type="monotone" dataKey="soilMoisture" stackId="1" stroke="#14b8a6" fill="#14b8a6" fillOpacity={0.6} name="Soil Moisture (%)" />
-                <Area type="monotone" dataKey="temp" stackId="2" stroke="#f59e0b" fill="#f59e0b" fillOpacity={0.6} name="Temperature (°C)" />
-              </AreaChart>
-            </ResponsiveContainer>
+            <div style={{ width: '100%', height: '300px', minHeight: '300px' }}>
+              {recentData && recentData.length > 0 ? (
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={recentData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                    <XAxis 
+                      dataKey="date" 
+                      tick={{ fontSize: 10 }}
+                      interval="preserveStartEnd"
+                      tickFormatter={(value) => {
+                        if (!value) return '';
+                        const date = new Date(value);
+                        return `${date.getMonth() + 1}/${date.getDate()}`;
+                      }}
+                    />
+                    <YAxis tick={{ fontSize: 11 }} />
+                    <Tooltip 
+                      contentStyle={{ backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '4px' }}
+                      labelFormatter={(value) => `Date: ${value}`}
+                    />
+                    <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
+                    <Area 
+                      type="monotone" 
+                      dataKey="soilMoisture" 
+                      stroke="#14b8a6" 
+                      fill="#14b8a6" 
+                      fillOpacity={0.6} 
+                      name="Soil Moisture (%)"
+                      isAnimationActive={true}
+                    />
+                    <Area 
+                      type="monotone" 
+                      dataKey="temp" 
+                      stroke="#f59e0b" 
+                      fill="#f59e0b" 
+                      fillOpacity={0.4} 
+                      name="Temperature (°C)"
+                      isAnimationActive={true}
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              ) : (
+                <div className="flex items-center justify-center h-full text-gray-500">
+                  Loading chart data...
+                </div>
+              )}
+            </div>
           </div>
         </div>
         

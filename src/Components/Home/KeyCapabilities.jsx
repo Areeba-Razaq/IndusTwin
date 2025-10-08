@@ -1,5 +1,39 @@
 import React from "react";
 import "./KeyCapabilities.css";
+import { FiDatabase, FiActivity, FiAlertTriangle, FiBarChart2, FiShield, FiUsers } from "react-icons/fi";
+
+const capabilities = [
+  {
+    title: "Real-time Data Streams",
+    desc: "Access live hydrological and meteorological data for immediate operational awareness and improved response planning.",
+    icon: <FiDatabase />,
+  },
+  {
+    title: "Interactive Scenario Modeling",
+    desc: "Simulate various climate and operational scenarios to assess potential impacts and optimize water management strategies.",
+    icon: <FiActivity />,
+  },
+  {
+    title: "Automated Early Warnings",
+    desc: "Receive timely alerts for flood events and other environmental hazards, ensuring communities are prepared and safe.",
+    icon: <FiAlertTriangle />,
+  },
+  {
+    title: "Rich Data Visualizations",
+    desc: "Explore complex data through interactive charts, graphs, and maps, making insights easily accessible and understandable.",
+    icon: <FiBarChart2 />,
+  },
+  {
+    title: "Enhanced Climate Resilience",
+    desc: "Strengthen the region’s ability to adapt to climate change through informed, evidence-based decision making.",
+    icon: <FiShield />,
+  },
+  {
+    title: "Stakeholder Collaboration",
+    desc: "Foster collaboration among governments, researchers, NGOs, and communities to support coordinated water resource management.",
+    icon: <FiUsers />,
+  },
+];
 
 const KeyCapabilities = () => {
   return (
@@ -7,53 +41,13 @@ const KeyCapabilities = () => {
       <h2>Key Capabilities of IndusTwin</h2>
 
       <div className="capability-grid">
-        <div className="capability-card">
-          <h3>Real-time Data Streams</h3>
-          <p>
-            Access live hydrological and meteorological data for immediate
-            operational awareness and improved response planning.
-          </p>
-        </div>
-
-        <div className="capability-card">
-          <h3>Interactive Scenario Modeling</h3>
-          <p>
-            Simulate various climate and operational scenarios to assess
-            potential impacts and optimize water management strategies.
-          </p>
-        </div>
-
-        <div className="capability-card">
-          <h3>Automated Early Warnings</h3>
-          <p>
-            Receive timely alerts for flood events and other environmental
-            hazards, ensuring communities are prepared and safe.
-          </p>
-        </div>
-
-        <div className="capability-card">
-          <h3>Rich Data Visualizations</h3>
-          <p>
-            Explore complex data through interactive charts, graphs, and maps,
-            making insights easily accessible and understandable.
-          </p>
-        </div>
-
-        <div className="capability-card">
-          <h3>Enhanced Climate Resilience</h3>
-          <p>
-            Strengthen the region’s ability to adapt to climate change through
-            informed, evidence-based decision making.
-          </p>
-        </div>
-
-        <div className="capability-card">
-          <h3>Stakeholder Collaboration</h3>
-          <p>
-            Foster collaboration among governments, researchers, NGOs, and
-            communities to support coordinated water resource management.
-          </p>
-        </div>
+        {capabilities.map((cap, index) => (
+          <div className="capability-card" key={index}>
+            <div className="capability-icon">{cap.icon}</div>
+            <h3>{cap.title}</h3>
+            <p>{cap.desc}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

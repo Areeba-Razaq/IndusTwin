@@ -1,10 +1,8 @@
+
 /* =========================
-   Contact.css — Updated
-   Keeps desktop styles untouched;
-   improves icon/text alignment and mobile layout.
+   Contact.css — Final Version
    ========================= */
 
-/* Main Container */
 .contact-container {
   max-width: 1100px;
   margin: 40px auto;
@@ -14,29 +12,28 @@
   box-sizing: border-box;
 }
 
-/* Title */
+/* ===== Header ===== */
 .contact-title {
-  font-size: 32px;
+  font-size: 45px;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-/* Subtitle */
 .contact-subtitle {
-  font-size: 16px;
-  color: #555;
+  font-size: 18px;
+  color: #444;
   margin-bottom: 30px;
 }
 
-/* Two Cards */
+/* ===== Top Two Cards (Send + Subscribe) ===== */
 .contact-cards {
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  align-items: stretch; /* ensure both cards match height */
+  align-items: stretch;
+  margin-bottom: 30px;
 }
 
-/* Each Card */
 .card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -46,23 +43,25 @@
   box-sizing: border-box;
 }
 
-/* Different widths */
 .form-card {
   flex: 0 0 65%;
 }
 
-.info-card {
+.subscribe-card {
   flex: 0 0 35%;
+  background: #f9fcfd;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 18px;
 }
 
-/* Card title */
 .card-title {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
-/* ========== Form Styling (desktop unchanged) ========== */
+/* ===== Form Styling ===== */
 .contact-form input,
 .contact-form textarea {
   width: 90%;
@@ -95,178 +94,239 @@
   background: #008bb0;
 }
 
-/* ========== Contact Info ========== */
-/* Improved alignment: fixed-width icon box + flexible text column */
-.contact-info {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
+/* ===== Subscribe Card ===== */
+.subscribe-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0077b5;
+  margin-bottom: 8px;
 }
 
-.contact-info li {
+.subscribe-card p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.subscribe-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.subscribe-form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.checkbox-group {
   display: flex;
-  align-items: center;      /* vertically center icon + text */
-  gap: 12px;
-  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+  margin-bottom: 15px;
+}
+
+.checkbox-group label {
   font-size: 14px;
   color: #333;
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-/* Icon container: fixed square, centered icon */
-.contact-info .icon {
+.subscribe-form button {
+  width: 100%;
+  background: #00a7d1;
+  color: white;
+  border: none;
+  padding: 10px 0;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.subscribe-form button:hover {
+  background: #008bb0;
+}
+
+/* ========================= */
+/* 📞 Reach Out Section — Final Clean Alignment */
+/* ========================= */
+
+.reachout-box {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f9fcfd;
+  padding: 35px 25px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.reachout-box h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 25px;
+}
+
+/* First Row: Email | Phone | Address */
+.reachout-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.reachout-item {
+  flex: 1;
+  text-align: center;
+  min-width: 220px;
+}
+
+.reachout-item .icon {
   font-size: 18px;
   color: #00a7d1;
-  flex: 0 0 40px;           /* fixed width so text aligns */
-  height: 40px;
+  background: #eaf8fb;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #eaf8fb;
-  border-radius: 8px;
-  box-sizing: border-box;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 20px;
+  margin-right: -80px;
 }
 
-/* The text column (strong + details) */
-.contact-info li > div {
-  flex: 1 1 auto;
-  text-align: left;
-  line-height: 1.25;
-}
-
-/* Strong label style */
-.contact-info li > div strong {
+.reachout-item strong {
   display: block;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 4px;
   color: #0b5970;
+  margin-bottom: 5px;
 }
 
-/* ========== Social Links ========== */
-.social-links {
+.reachout-item span {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Follow Us Row */
+.reachout-follow {
+  text-align: center;
+}
+
+.reachout-follow strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0b5970;
+  margin-bottom: 15px;
+}
+
+/* Social Icons Row */
+.reachout-socials {
   display: flex;
-  flex-direction: column;   /* stacked by default (desktop) */
-  gap: 10px;
-  margin-top: 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-/* Link style — subtle pill-like buttons */
-.social-links a {
+.reachout-socials a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 4px;
+  gap: 6px;
   font-size: 14px;
   text-decoration: none;
   color: #0077b5;
   font-weight: 500;
-  padding: 8px 10px;
-  border-radius: 8px;
+  padding: 8px 14px;
+  background: #f5fbfc;
+  border: 1px solid #e6f4f6;
+  border-radius: 20px;
   transition: background 0.15s, transform 0.06s;
+  
 }
 
-.social-links a:hover {
-  background: #f0fbff;
-  transform: translateY(-1px);
+.reachout-socials a:hover {
+  background: #eaf8fb;
+  transform: translateY(-2px);
 }
 
-.social-links .icon {
-  font-size: 16px;
+/* Responsive */
+@media (max-width: 768px) {
+  .reachout-row {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .reachout-item {
+    width: 100%;
+  }
+
+  .reachout-box h3 {
+    font-size: 20px;
+  }
 }
 
 /* ========================= */
-/* 📱 Mobile Responsiveness  */
+/* 📱 Responsive Design */
 /* ========================= */
 @media (max-width: 768px) {
-  /* keep headings readable */
   .contact-title {
     font-size: 26px;
   }
 
   .contact-subtitle {
     font-size: 14px;
-    padding: 0 10px;
   }
 
-  /* stack cards */
   .contact-cards {
     flex-direction: column;
-    gap: 24px;
   }
 
-  /* force each card full width and same box-sizing */
   .form-card,
-  .info-card {
+  .subscribe-card {
     flex: 1 1 100%;
-    width: 100%;
   }
 
-  /* make form inputs full width and easier to tap */
   .contact-form input,
   .contact-form textarea {
     width: 100%;
-    font-size: 14px;
-  }
-
-  .contact-form textarea {
-    min-height: 120px;
   }
 
   .contact-form button {
     width: 100%;
-    font-size: 15px;
   }
 
-  /* Card title centered on mobile for a clean card header */
-  .card-title {
-    font-size: 20px;
-    text-align: center;
+  /* Reach Out stacks vertically */
+  /* .reachout-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
-  /* Center the info block inside the card but keep each item left aligned */
-  .info-card .contact-info {
-    max-width: 480px;
-    margin: 0 auto 14px;
+  .social-links {
+    align-items: center;
   }
 
-  /* Keep icon left of text and vertically centered */
   .contact-info li {
     justify-content: flex-start;
-    align-items: center;
-  }
-
-  /* Make icons slightly larger and keep fixed width */
-  .contact-info .icon {
-    flex: 0 0 44px;
-    height: 44px;
-    font-size: 18px;
-  }
-
-  /* Social links: show inline (centered) and wrap if needed */
-  .social-links {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .social-links a {
-    padding: 8px 12px;
-    border-radius: 20px;
-    background: #f5fbfc;
-    border: 1px solid #e6f4f6;
-  }
+  } */
 }
 
 @media (max-width: 480px) {
   .contact-title {
     font-size: 22px;
-    line-height: 1.2;
-  }
-
-  .contact-subtitle {
-    font-size: 13px;
   }
 
   .card-title {
@@ -282,3 +342,4 @@
     padding: 7px 10px;
   }
 }
+
