@@ -5,8 +5,8 @@
   justify-content: center;
   height: 90vh;
   padding: 0 20px;
-  background: url("indus-hero.png") no-repeat center center/cover;
-  background-attachment: fixed;
+  background: url("/indus-hero.png") no-repeat center center/cover;
+  /* background-attachment: fixed; */
   color: white;
   text-align: center;
   overflow: hidden;
